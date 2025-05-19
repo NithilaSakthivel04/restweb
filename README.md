@@ -1,5 +1,5 @@
 # Ex.07 Restaurant Website
-## Date:
+## Date:20/05/2025
 
 ## AIM:
 To develop a static Restaurant website to display the food items and services provided by them.
@@ -28,10 +28,202 @@ Validate the HTML code.
 Publish the website in the given URL.
 
 ## PROGRAM:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delish Dine Restaurant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e63f3f;
+      color: #333;
+    }
 
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgb(218, 244, 127);
+      z-index: 10;
+    }
+
+    .banner {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    nav ul {
+      list-style: none;
+      background-color: #b22222;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #8b0000;
+    }
+
+    section {
+      padding: 30px 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .menu-grid,
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item,
+    .staff-member {
+      background-color: #e3f392;
+      padding: 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .menu-item img,
+    .staff-member img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    footer {
+      background-color: #6ced97;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="banner.jpg" alt="Restaurant Banner" class="banner" />
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link active" data-target="home">Home</a></li>
+        <li><a href="#" class="nav-link" data-target="menu">Menu</a></li>
+        <li><a href="#" class="nav-link" data-target="admin">Administration</a></li>
+        <li><a href="#" class="nav-link" data-target="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="active">
+    <div class="intro">
+      <h1>Welcome to Delish Dine!</h1>
+      <p>Experience world-class food in a cozy, welcoming atmosphere. Serving joy on every plate.</p>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Our Delicious Menu</h2>
+    <div class="menu-grid">
+      <!-- 12 food items -->
+      <!-- Replace images with your own or use placeholders -->
+      <div class="menu-item"><img src="food1.jpg" alt=""><h3>Pasta Alfredo</h3><p>Creamy white sauce pasta.</p><p>$10.99</p></div>
+      <div class="menu-item"><img src="food2.jpg" alt=""><h3>Grilled Chicken</h3><p>Spicy grilled chicken breast.</p><p>$12.50</p></div>
+      <div class="menu-item"><img src="food3.jpg" alt=""><h3>Cheese Pizza</h3><p>Classic Italian cheese pizza.</p><p>$9.99</p></div>
+      <div class="menu-item"><img src="food4.jpg" alt=""><h3>Veggie Burger</h3><p>Grilled veggie patty with toppings.</p><p>$8.75</p></div>
+      <div class="menu-item"><img src="food5.jpg" alt=""><h3>Fish Tacos</h3><p>Fresh cod with spicy mayo.</p><p>$11.25</p></div>
+      <div class="menu-item"><img src="food6.jpg" alt=""><h3>Caesar Salad</h3><p>Crisp lettuce and dressing.</p><p>$7.50</p></div>
+      <div class="menu-item"><img src="food7.jpg" alt=""><h3>Beef Steak</h3><p>Medium-rare sirloin steak.</p><p>$14.99</p></div>
+      <div class="menu-item"><img src="food8.jpg" alt=""><h3>Tomato Soup</h3><p>Hot and creamy tomato soup.</p><p>$6.50</p></div>
+      <div class="menu-item"><img src="food9.jpg" alt=""><h3>Chicken Biryani</h3><p>Spiced rice with chicken.</p><p>$13.99</p></div>
+      <div class="menu-item"><img src="food10.jpg" alt=""><h3>Paneer Tikka</h3><p>Grilled Indian cottage cheese.</p><p>$11.00</p></div>
+      <div class="menu-item"><img src="food11.jpg" alt=""><h3>Mango Lassi</h3><p>Refreshing mango yogurt drink.</p><p>$4.99</p></div>
+      <div class="menu-item"><img src="food12.jpg" alt=""><h3>Chocolate Cake</h3><p>Rich layered dessert.</p><p>$5.75</p></div>
+    </div>
+  </section>
+
+  <!-- Admin Section -->
+  <section id="admin">
+    <h2>Meet Our Team</h2>
+    <div class="staff-grid">
+      <div class="staff-member"><img src="staff1.jpg" alt=""><h3>Jane Doe</h3><p>Head Chef</p></div>
+      <div class="staff-member"><img src="staff2.jpg" alt=""><h3>John Smith</h3><p>Restaurant Manager</p></div>
+      <div class="staff-member"><img src="staff3.jpg" alt=""><h3>Amy Chen</h3><p>Sous Chef</p></div>
+      <div class="staff-member"><img src="staff4.jpg" alt=""><h3>Rahul Patel</h3><p>Head Waiter</p></div>
+      <div class="staff-member"><img src="staff5.jpg" alt=""><h3>Maria Lopez</h3><p>Pastry Chef</p></div>
+      <div class="staff-member"><img src="staff6.jpg" alt=""><h3>Tom Williams</h3><p>Marketing Lead</p></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> 123 Main Street, Food City, FC 12345</p>
+    <p><strong>Phone:</strong> +1 555-123-4567</p>
+    <p><strong>Email:</strong> contact@delishdine.com</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Created by NITHILA S © 2025</p>
+  </footer>
+
+  <!-- JS to Switch Sections -->
+  <script>
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        sections.forEach(sec => {
+          sec.classList.remove('active');
+          if (sec.id === link.dataset.target) {
+            sec.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+```
 
 ## OUTPUT:
-
-
+![alt text](<Screenshot (13).png>)
+![alt text](<Screenshot (14).png>)
+![alt text](<Screenshot (15).png>)
+![alt text](<Screenshot (16).png>)
+![alt text](<Screenshot (17).png>)
 ## RESULT:
 The program for designing software company website using HTML and CSS is completed successfully.
